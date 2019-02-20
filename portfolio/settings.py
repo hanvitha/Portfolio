@@ -25,7 +25,7 @@ SECRET_KEY = 'e421vl7r61%c0auw*bvj8=**$&sl)cd1^%xp73$k4nxi-u2w=7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.99.114', 'localhost', '127.0.0.1', 'master.na39.openshift.opentlc.com']
 
 STATIC_ROOT = ''
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
