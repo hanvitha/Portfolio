@@ -98,7 +98,7 @@
                 {% endif %}
 
             </section>
-        
+
             <div class="parallax" style="background-image: url({% static 'home/projects.png' %});"></div>
             <section id="projects">
                 <h3>Projects</h3>
@@ -133,8 +133,8 @@
                 {% endif %}
 
             </section>
-            //blog
-            <div class="parallax" style="background : {% static "home/blog.png" %};"></div>
+
+            <div class="parallax" style="background-image : url('{% static "home/blog.png" %}');"></div>
 
             <section id="blog">
 
@@ -156,7 +156,6 @@
                 </div>
             </section>
 
-            //contact
             <div class="parallax" style="background-image: url({% static "home/contact.png" %});"></div>
 
             <section id="contact">
@@ -203,14 +202,10 @@
             <a href="http://lastingrelationwithgod.blogspot.com/"><i class="fa fa-rss-square fa-3x social"></i></a>
             <a href="https://www.linkedin.com/in/hanvitha-gavini-44482524/"><i
                     class="fa fa-linkedin-square fa-3x social"></i></a>
-
-
         </div>
         <br>
     </div>
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="{% static 'home/index.js' %}"></script>
 </body>
 

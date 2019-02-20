@@ -162,10 +162,8 @@ section >h2,section>h3,section >h4,section>h1{
      -webkit-transition-duration: 0.5s;
  }
  footer{
-	 background-color:;
+	 background-color:#FFC0CB;
  }
-//extras added
-
 .item .image > div::after {
   content: '';
   width: 100%;
