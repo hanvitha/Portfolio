@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <title>Hanvitha</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Hanvitha Gavini Personal Website">
+    <meta name="keywords"
+          content="Hanvitha,Gavini,Women,technology,Coder,Data,Sciences,CS,Compuet Science, Student,Bank Of America,bofa,HTML,CSS,XML,Java,experience,python">
+    <meta name="author" content="Hanvitha">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.png' %}"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'home/index.css' %}" type="text/css">
+</head>
+<body>
+
+<header>
+    <div class="header-nav">
+        <nav class="navbar">
+            <div class="container" style="padding-top: 5px;padding-bottom: 5px;">
+                <a class="navbar-brand" href="#" style="padding-top: 5px;">
+                    <img style="width:40px;height:40px" src="{% static "home/favicon.png" %}" alt="Logo">
+                </a>
+                <div class="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-menu">
+                            <a class="nav-menu-item n1" href="#home">Home</a>
+                        </li>
+                        <li class="nav-menu">
+                            <a class="nav-menu-item n1" href="#home">Home</a>
+                        </li>
+                        <li class="nav-menu">
+                            <a class="nav-menu-item n1"  href="#experience">Experience</a>
+                        </li>
+                         <li class="nav-menu">
+                            <a class="nav-menu-item n1" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-menu">
+                            <a class="nav-menu-item n1"  href="#skills">Skills</a>
+                        </li>
+						<li class="nav-menu">
+                            <a class="nav-menu-item n1"  href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="column main-cont">
+            <div class="parallax" style="background-image: url({% static 'home/background.png' %})"></div>
+            <section class="cover-img">
+                <div>
+                    <h2 style="padding:100px 20px 0px 175px">Hello I am Hanvitha!</h2>
+                </div>
+            </section>
+            <section id="home">
+                <h3>About Me:</h3>
+                <p>
+                    I am a Computer Science Graduate Student. I am passionate about coding. All I love about Computer
+                    Science is how bits can do magic, the analytical part..cracking the problems is the best!!</p>
+                <p>I am a super cool person.I enjoy dancing and volunteering for charities and communities!</p>
+                <p>Coming to my professional life..I recently worked for Computer Science Outreach as an instructor,
+                    teaching Python, Java and contest problems to AP Computer Science students.</p>
+                <p>Prior to this, I have 3.5 year work experience in Software field. I worked for Bank of America and
+                    Kony.To know more <a href="#experience" style="font-size:17px;color:#b56f7b">scroll to...</a>
+                </p>
+
+
+            </section>
+
+            <div class="parallax" style="background-image: url({% static "home/projects.png" %});"></div>
+            <section class="profile-items experience" id="experience">
+                {% if  experiences %}
+                    {% for exp in experiences %}
+                        <div class="item">
+                            <div class="image">
+                                <div>
+                                    <img src="{{ exp.image_url }}"/>
+                                    <span>
+                            {{ exp.start }}-{{ exp.end }}
+                          </span>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div>
+                                    <h1>{{ exp.position }} @ {{ exp.company }} </h1>
+                                    <p>{{ exp.work_detail }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </section>
+
+
+            <div class="parallax" style="background-image: url({% static 'home/projects.png' %});"></div>
+            <section id="projects">
+                <h3>Projects</h3>
+                {% if projects %}
+                    {% for proj in projects %}
+                        <div class="panel project-details">
+                            <h4>{{ proj.name }} </h4>
+                            <p>
+                                {{ proj.project_detail }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+            </section>
+            <div class="parallax" style="background-image: url({% static "home/skills.png" %});"></div>
+            <section id="skills">
+                <h3>Skills</h3>
+                {% if skills %}
+                    {% for skill in skills %}
+                    <div class="barWrapper" id='bar-wrap'>
+                        <span class="progressText"><B>{{ skill.name }}</B></span>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.proficiency }}" aria-valuemin="0"
+                                 aria-valuemax="100">
+                                <span class="popOver" data-toggle="tooltip" data-placement="top" title="{{ skill.proficiency }}%"> </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+            </section>
+            //blog
+            <div class="parallax" style="background : {% static "home/blog.png" %};"></div>
+
+            <section id="blog">
+
+
+                <div class="container">
+                    {% if blogs %}
+                    {% for blog in blogs %}
+                        <div class="panel project-details">
+                            <h3>Tech Blog </h3>
+                            <p>
+                                Want to learn some new tech stuff with me? Then go ahead and click -
+                                <a href="https://hanvithagavini.blogspot.com">here</a>
+                            </p>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    </div>
+                </div>
+            </section>
+
+            //contact
+            <div class="parallax" style="background-image: url({% static "home/contact.png" %});"></div>
+
+            <section id="contact">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <form action="mailto:hanvitha.gavini@utdallas.edu" class="form-horizontal" method="post">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Chandler Bing">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email"
+                                           placeholder="chandler.bing@example.com">
+                                </div>
+                                <div class="form-group ">
+                                    <label for="message">Your Message</label>
+                                    <textarea class="form-control" id="message" placeholder="Description"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-black" style="background: black;color:#ffe4e1;">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+    </div>
+</main>
+<footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="container">
+        <div style="border-top: 0.5px solid white">
+        </div>
+        <div class="text-center center-block">
+            <a href="https://www.facebook.com/hanvitha"><i class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href="https://github.com/hanvitha92"><i class="fa fa fa-github fa-3x social"></i></a>
+            <a href="https://plus.google.com/+HanvithaGavini"><i class="fa fa-google-plus-square fa-3x social"></i></a>
+            <a href="mailto:hanvitha.gavini@utdallas.edu"><i class="fa fa-envelope-square fa-3x social"></i></a>
+            <a href="http://lastingrelationwithgod.blogspot.com/"><i class="fa fa-rss-square fa-3x social"></i></a>
+            <a href="https://www.linkedin.com/in/hanvitha-gavini-44482524/"><i
+                    class="fa fa-linkedin-square fa-3x social"></i></a>
+
+
+        </div>
+        <br>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{% static 'home/index.js' %}"></script>
+</body>
+
+</html>
